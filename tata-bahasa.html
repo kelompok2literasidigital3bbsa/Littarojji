@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="logo web fiks.png">
+
+<title>Tata Bahasa Arab | Littaroji</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #173d35;
+  --green2: #24594b;
+  --gold: #c5a56a;
+  --cream: #f8f6ef;
+  --white: #ffffff;
+  --text: #24352f;
+  --muted: #77847c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+
+/* NAVBAR */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 15px rgba(0,0,0,.04);
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--green);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 23px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 75px 8% 85px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "۞";
+  position: absolute;
+  right: 8%;
+  top: -70px;
+  font-size: 300px;
+  color: rgba(255,255,255,.035);
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 6vw, 58px);
+  margin-bottom: 15px;
+}
+
+.arabic {
+  color: #dfc58f;
+  font-size: 29px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #d4dfd8;
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 650px;
+  margin: auto;
+}
+
+/* BREADCRUMB */
+
+.breadcrumb {
+  padding: 25px 8% 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--green2);
+}
+
+/* INTRO */
+
+.intro {
+  text-align: center;
+  padding: 65px 8% 35px;
+}
+
+.label {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  color: var(--green);
+  margin-bottom: 15px;
+}
+
+.intro p {
+  max-width: 700px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* RESOURCE CARDS */
+
+.resources {
+  padding: 35px 8% 85px;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 14px;
+  padding: 32px;
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 30px;
+  border: 1px solid #eeeae0;
+  transition: .3s;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(23,61,53,.09);
+}
+
+.resource-logo {
+  background: #edf2e9;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
+  color: var(--green);
+  text-align: center;
+  padding: 15px;
+}
+
+.resource-logo .symbol {
+  font-size: 45px;
+  margin-bottom: 12px;
+}
+
+.resource-logo strong {
+  font-size: 16px;
+}
+
+.resource-logo small {
+  color: var(--muted);
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.tag {
+  display: inline-block;
+  background: #edf3ed;
+  color: var(--green2);
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 30px;
+  margin-bottom: 12px;
+}
+
+.resource-info h3 {
+  color: var(--green);
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.resource-info p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+  margin-bottom: 11px;
+}
+
+.resource-info p strong {
+  color: var(--text);
+}
+
+.review {
+  background: #f8f6ef;
+  padding: 13px 16px;
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.review p {
+  margin: 0;
+  font-style: italic;
+}
+
+.access-btn {
+  display: inline-block;
+  margin-top: 19px;
+  padding: 12px 22px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.access-btn:hover {
+  background: var(--gold);
+  color: var(--green);
+}
+
+/* TIPS */
+
+.tips {
+  background: #edf0e8;
+  padding: 55px 8%;
+  text-align: center;
+}
+
+.tips h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--green);
+  font-size: 28px;
+  margin-bottom: 13px;
+}
+
+.tips p {
+  max-width: 650px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* FOOTER */
+
+footer {
+  background: #102d27;
+  color: #d2ded7;
+  text-align: center;
+  padding: 38px 8%;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 12px;
+}
+
+footer p {
+  font-size: 12px;
+  line-height: 2;
+  color: #b5c5bc;
+}
+
+.copyright {
+  border-top: 1px solid #355349;
+  margin-top: 22px;
+  padding-top: 18px;
+  font-size: 11px;
+  color: #9aafa3;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+  .resource-card {
+    grid-template-columns: 130px 1fr;
+    gap: 20px;
+  }
+}
+
+@media(max-width: 650px) {
+  nav {
+    padding: 17px 6%;
+  }
+
+  .menu-btn {
+    display: block;
+    color: var(--green);
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 25px 7%;
+    gap: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero {
+    padding: 65px 7%;
+  }
+
+  .breadcrumb {
+    padding-left: 7%;
+  }
+
+  .intro {
+    padding: 50px 7% 25px;
+  }
+
+  .intro h2 {
+    font-size: 28px;
+  }
+
+  .resources {
+    padding: 25px 6% 60px;
+  }
+
+  .resource-card {
+    grid-template-columns: 1fr;
+    padding: 22px;
+    gap: 20px;
+  }
+
+  .resource-logo {
+    min-height: 120px;
+  }
+
+  .resource-info h3 {
+    font-size: 23px;
+  }
+
+  .tips {
+    padding: 45px 7%;
+  }
+}
+.dictionary-logo {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+  <a href="index.html" class="logo">
+    LITTA<span>ROJJI</span>
+  </a>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="kamus.html">Kamus Digital</a></li>
+    <li><a href="tata-bahasa.html" class="active">Tata Bahasa</a></li>
+    <li><a href="perpustakaan.html">Perpustakaan</a></li>
+    <li><a href="skill-berbahasa.html">Skill Berbahasa</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="eyebrow">LITTAROJJI • DIGITAL RESOURCES</div>
+
+  <h1>Arabic Grammar Resources</h1>
+
+  <div class="arabic" dir="rtl">
+    مَصَادِرُ تَعَلُّمِ قَوَاعِدِ اللُّغَةِ الْعَرَبِيَّةِ
+  </div>
+
+  <p>
+    Pelajari kaidah Bahasa Arab, pahami susunan kalimat,
+    dan kenali perubahan bentuk kata melalui berbagai
+    sumber belajar digital yang mudah diakses.
+  </p>
+</header>
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+  <a href="index.html">Beranda</a>
+  &nbsp; / &nbsp; Tata Bahasa Arab
+</div>
+
+<!-- INTRO -->
+
+<section class="intro">
+  <div class="label">ARABIC GRAMMAR COLLECTION</div>
+
+  <h2>Belajar Tata Bahasa Arab</h2>
+
+  <p>
+    Tata bahasa merupakan bagian penting dalam mempelajari
+    Bahasa Arab. Melalui sumber belajar berikut, pembelajar
+    dapat memahami kaidah nahwu, mengenali perubahan bentuk
+    kata (sharaf), serta mempelajari cara menyusun kalimat
+    Bahasa Arab dengan baik dan benar.
+  </p>
+</section>
+
+<!-- RESOURCE LIST -->
+
+<section class="resources">
+
+  <!-- MADINAH ARABIC -->
+
+  <article class="resource-card">
+
+    <div class="resource-logo">
+      <img
+        src="logo madinah arabic.jpg"
+        alt="Logo Al-Madinah Al-Arabiyyah"
+        class="dictionary-logo"
+    >
+    </div>
+
+    <div class="resource-info">
+
+      <span class="tag">MATERI PEMBELAJARAN BAHASA ARAB</span>
+
+      <h3>Madinah Arabic</h3>
+
+      <p>
+        <strong>Deskripsi:</strong>
+        Madinah Arabic merupakan platform pembelajaran Bahasa
+        Arab yang menyediakan materi secara bertahap, mulai
+        dari tingkat dasar hingga materi yang lebih lanjut.
+        Di dalamnya terdapat pembelajaran tata bahasa Arab,
+        kosakata, serta latihan untuk meningkatkan pemahaman.
+      </p>
+
+      <p>
+        <strong>Fungsi:</strong>
+        Membantu pembelajar memahami dasar-dasar tata bahasa
+        Arab, termasuk nahwu, susunan kalimat, dan penggunaan
+        kosakata dalam berbagai bentuk kalimat.
+      </p>
+
+      <div class="review">
+        <p>
+          <strong>Ulasan:</strong>
+          Materi disajikan secara terstruktur sehingga dapat
+          membantu pemula belajar Bahasa Arab secara bertahap.
+          Sumber ini juga dapat digunakan untuk mengulang
+          materi tata bahasa di luar perkuliahan.
+        </p>
+      </div>
+
+      <a href="https://www.madinaharabic.com/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="access-btn">
+        KUNJUNGI WEBSITE →
+      </a>
+
+    </div>
+  </article>
+
+ <!-- Qutrub -->
+
+  <article class="resource-card">
+
+    <div class="resource-logo">
+      <img
+        src="logo qutrub.jpg"
+        alt="Logo Qutrub"
+        class="dictionary-logo"
+    >
+    </div>
+
+    <div class="resource-info">
+
+      <span class="tag">ALAT BANTU ILMU SHARAF</span>
+
+      <h3>Qutrub</h3>
+
+      <p>
+        <strong>Deskripsi:</strong>
+        Qutrub merupakan alat bantu digital untuk melakukan
+        konjugasi atau perubahan bentuk kata kerja Bahasa Arab.
+        Pengguna dapat memasukkan kata kerja tertentu untuk
+        memperoleh berbagai bentuk perubahan sesuai dengan
+        pola dan bentuk yang tersedia.
+      </p>
+
+      <p>
+        <strong>Fungsi:</strong>
+        Membantu pembelajar mengenali perubahan kata kerja
+        Bahasa Arab, seperti bentuk fi'il madhi, fi'il mudhari',
+        dan bentuk lainnya yang berkaitan dengan pembelajaran
+        ilmu sharaf.
+      </p>
+
+      <div class="review">
+        <p>
+          <strong>Ulasan:</strong>
+          Qutrub bermanfaat sebagai alat bantu ketika mempelajari
+          tashrif fi'il. Pengguna dapat membandingkan berbagai
+          bentuk kata kerja dengan lebih praktis tanpa harus
+          mengubah setiap bentuk secara manual.
+        </p>
+      </div>
+
+      <a href="https://qutrub.arabeyes.org/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="access-btn">
+        KUNJUNGI WEBSITE →
+      </a>
+
+    </div>
+  </article>
+
+  <!-- Quranic Arabic Corpus -->
+
+  <article class="resource-card">
+
+    <div class="resource-logo">
+      <img
+        src="logo Quranic Arabic Corpus.png"
+        alt="Logo Quranic Arabic Corpus"
+        class="dictionary-logo"
+    >
+    </div>
+
+    <div class="resource-info">
+
+      <span class="tag">ALAT BANTU ANALISIS TATA BAHASA AL-QUR'AN</span>
+
+      <h3>Quranic Arabic Corpus</h3>
+
+      <p>
+        <strong>Deskripsi:</strong>
+        platform digital yang menyajikan analisis linguistik Al-Qur'an secara terperinci.
+         Website ini menyediakan informasi mengenai tata bahasa, 
+         sintaksis, dan morfologi setiap kata dalam ayat Al-Qur'an.
+      </p>
+
+      <p>
+        <strong>Fungsi:</strong>
+        Mempelajari struktur kata, kedudukan kata, 
+        dan kaidah bahasa Arab dalam ayat Al-Qur'an.
+      </p>
+
+      <div class="review">
+        <p>
+          <strong>Ulasan:</strong>
+          Website ini sangat bermanfaat untuk mempelajari nahwu dan sharaf
+           melalui analisis kata dan struktur kalimat dalam Al-Qur'an.
+        </p>
+      </div>
+
+      <a href="https://corpus.quran.com/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="access-btn">
+        KUNJUNGI WEBSITE →
+      </a>
+
+    </div>
+  </article>
+
+</section>
+
+<!-- TIPS -->
+
+<section class="tips">
+  <h2>Tips Belajar Tata Bahasa Arab</h2>
+
+  <p>
+    Pelajari kaidah nahwu dan sharaf secara bertahap.
+    Mulailah dengan memahami dasar-dasar perubahan kata,
+    mengenali kedudukan kata dalam kalimat, kemudian
+    praktikkan melalui membaca dan menyusun kalimat Bahasa
+    Arab. Gunakan sumber digital sebagai pendamping belajar,
+    bukan sebagai pengganti latihan secara langsung.
+  </p>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-logo">LITTAROJJI</div>
+
+  <p>
+    Arabic Digital Resource Atlas<br>
+    Proyek Tugas Kelompok 2 Literasi Digital (2026)
+  </p>
+
+  <p style="margin-top:15px;">
+    Tim Penyusun: Abdul Latif (256141028), Muhammad Zaki Imaduddin (256141032), Arif Rahmatullah (256141038), 
+    Raissa Neila Jasmine (256141045), dan Tanwirotul Muhimmah (256141049)<br>
+    Program Studi Bahasa dan Sastra Arab<br>
+    UIN Raden Mas Said Surakarta
+  </p>
+
+  <div class="copyright">
+    © 2026 Littarojji. Dibuat untuk memenuhi tugas
+    proyek Mata Kuliah Literasi Digital.
+  </div>
+
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks")
+    .classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

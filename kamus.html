@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="logo web fiks.png">
+<title>Kamus Digital Arab | Littarojji</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #173d35;
+  --green2: #24594b;
+  --gold: #c5a56a;
+  --cream: #f8f6ef;
+  --white: #ffffff;
+  --text: #24352f;
+  --muted: #77847c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+
+/* NAVBAR */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 15px rgba(0,0,0,.04);
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--green);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 23px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  background: var(--green);
+  color: white;
+  text-align: center;
+  padding: 75px 8% 85px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "۞";
+  position: absolute;
+  right: 8%;
+  top: -70px;
+  font-size: 300px;
+  color: rgba(255,255,255,.035);
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 6vw, 58px);
+  margin-bottom: 15px;
+}
+
+.arabic {
+  color: #dfc58f;
+  font-size: 29px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #d4dfd8;
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 650px;
+  margin: auto;
+}
+
+/* BREADCRUMB */
+
+.breadcrumb {
+  padding: 25px 8% 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--green2);
+}
+
+/* INTRO */
+
+.intro {
+  text-align: center;
+  padding: 65px 8% 35px;
+}
+
+.label {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  color: var(--green);
+  margin-bottom: 15px;
+}
+
+.intro p {
+  max-width: 700px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* DICTIONARY CARDS */
+
+.resources {
+  padding: 35px 8% 85px;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 14px;
+  padding: 32px;
+  margin-bottom: 25px;
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 30px;
+  border: 1px solid #eeeae0;
+  transition: .3s;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(23,61,53,.09);
+}
+
+.resource-logo {
+  background: #edf2e9;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
+  color: var(--green);
+  text-align: center;
+  padding: 15px;
+}
+
+.resource-logo .symbol {
+  font-size: 45px;
+  margin-bottom: 12px;
+}
+
+.resource-logo strong {
+  font-size: 16px;
+}
+
+.resource-logo small {
+  color: var(--muted);
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.tag {
+  display: inline-block;
+  background: #edf3ed;
+  color: var(--green2);
+  padding: 6px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 30px;
+  margin-bottom: 12px;
+}
+
+.resource-info h3 {
+  color: var(--green);
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.resource-info p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+  margin-bottom: 11px;
+}
+
+.resource-info p strong {
+  color: var(--text);
+}
+
+.review {
+  background: #f8f6ef;
+  padding: 13px 16px;
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+  margin-top: 15px;
+}
+
+.review p {
+  margin: 0;
+  font-style: italic;
+}
+
+.access-btn {
+  display: inline-block;
+  margin-top: 19px;
+  padding: 12px 22px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.access-btn:hover {
+  background: var(--gold);
+  color: var(--green);
+}
+
+/* TIPS */
+
+.tips {
+  background: #edf0e8;
+  padding: 55px 8%;
+  text-align: center;
+}
+
+.tips h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--green);
+  font-size: 28px;
+  margin-bottom: 13px;
+}
+
+.tips p {
+  max-width: 650px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* FOOTER */
+
+footer {
+  background: #102d27;
+  color: #d2ded7;
+  text-align: center;
+  padding: 38px 8%;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 12px;
+}
+
+footer p {
+  font-size: 12px;
+  line-height: 2;
+  color: #b5c5bc;
+}
+
+.copyright {
+  border-top: 1px solid #355349;
+  margin-top: 22px;
+  padding-top: 18px;
+  font-size: 11px;
+  color: #9aafa3;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+  .resource-card {
+    grid-template-columns: 130px 1fr;
+    gap: 20px;
+  }
+}
+
+@media(max-width: 650px) {
+  nav {
+    padding: 17px 6%;
+  }
+
+  .menu-btn {
+    display: block;
+    color: var(--green);
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 25px 7%;
+    gap: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero {
+    padding: 65px 7%;
+  }
+
+  .breadcrumb {
+    padding-left: 7%;
+  }
+
+  .intro {
+    padding: 50px 7% 25px;
+  }
+
+  .intro h2 {
+    font-size: 28px;
+  }
+
+  .resources {
+    padding: 25px 6% 60px;
+  }
+
+  .resource-card {
+    grid-template-columns: 1fr;
+    padding: 22px;
+    gap: 20px;
+  }
+
+  .resource-logo {
+    min-height: 120px;
+  }
+
+  .resource-info h3 {
+    font-size: 23px;
+  }
+
+  .tips {
+    padding: 45px 7%;
+  }
+}
+
+.dictionary-logo {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+  <a href="index.html" class="logo">
+    LITTA<span>ROJJI</span>
+  </a>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="kamus.html" class="active">Kamus Digital</a></li>
+    <li><a href="tata-bahasa.html">Tata Bahasa</a></li>
+    <li><a href="perpustakaan.html">Perpustakaan</a></li>
+    <li><a href="skill-berbahasa.html">Skill Berbahasa</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="eyebrow">LITTAROJJI • DIGITAL RESOURCES</div>
+
+  <h1>Arabic Digital Dictionary</h1>
+
+  <div class="arabic" dir="rtl">
+    الْمَعَاجِمُ الْعَرَبِيَّةُ الرَّقْمِيَّةُ
+  </div>
+
+  <p>
+    Temukan makna kata, perluas kosakata, dan pahami
+    penggunaan Bahasa Arab melalui berbagai kamus
+    digital yang praktis dan mudah diakses.
+  </p>
+</header>
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+  <a href="index.html">Beranda</a>
+  &nbsp; / &nbsp; Kamus Digital Arab
+</div>
+
+<!-- INTRO -->
+
+<section class="intro">
+  <div class="label">DICTIONARY COLLECTION</div>
+
+  <h2>Kamus Digital Arab</h2>
+
+  <p>
+    Kamus digital merupakan salah satu sumber penting
+    dalam mempelajari Bahasa Arab. Melalui platform berikut,
+    pembelajar dapat mencari arti kosakata, memahami makna,
+    serta menemukan padanan kata dalam bahasa lain.
+  </p>
+</section>
+
+<!-- RESOURCE LIST -->
+
+<section class="resources">
+
+  <!-- AL MAANY -->
+
+  <article class="resource-card">
+
+    <div class="resource-logo">
+    <img
+        src="logo kamus almaany.jpeg"
+        alt="Logo Al-Maany"
+        class="dictionary-logo"
+    >
+    </div>
+
+    <div class="resource-info">
+
+      <span class="tag">KAMUS ARAB MULTIBAHASA</span>
+
+      <h3>Al-Maany</h3>
+
+      <p>
+        <strong>Deskripsi:</strong>
+        Al-Maany merupakan kamus digital multibahasa
+        yang menyediakan pencarian kosakata Bahasa Arab
+        beserta terjemahannya ke dalam Bahasa Indonesia,
+        Inggris, dan beberapa bahasa lainnya.
+      </p>
+
+      <p>
+        <strong>Fungsi:</strong>
+        Membantu pengguna mencari arti kata, sinonim,
+        antonim, serta memahami penggunaan kata
+        dalam konteks kalimat Bahasa Arab.
+      </p>
+
+      <div class="review">
+        <p>
+          <strong>Ulasan:</strong>
+          Website ini sangat membantu pembelajar Bahasa Arab
+          dalam mencari makna kosakata. Pilihan bahasa dan
+          penjelasannya membuatnya bermanfaat untuk
+          penerjemahan sehari-hari maupun akademik.
+        </p>
+      </div>
+
+      <a href="https://www.almaany.com/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="access-btn">
+        KUNJUNGI WEBSITE →
+      </a>
+
+    </div>
+  </article>
+
+  <!-- REVERSO CONTEXT -->
+
+  <article class="resource-card">
+
+    <div class="resource-logo">
+    <img
+        src="logo reverso.png"
+        alt="Logo Reverso Context"
+        class="dictionary-logo"
+    >
+    </div>
+
+    <div class="resource-info">
+
+      <span class="tag">KAMUS MULTIBAHASA</span>
+
+      <h3>Reverso Context</h3>
+
+      <p>
+        <strong>Deskripsi:</strong>
+        Reverso Context merupakan platform penerjemah multibahasa yang menyediakan
+        terjemahan kata dan frasa berdasarkan contoh penggunaannya dalam berbagai konteks kalimat.
+      </p>
+
+      <p>
+        <strong>Fungsi:</strong>
+        Mencari arti kata atau frasa, menerjemahkan kalimat, 
+        serta melihat contoh penggunaan kata dalam 
+        bahasa Arab dan bahasa lainnya.
+      </p>
+
+      <div class="review">
+        <p>
+          <strong>Ulasan:</strong>
+          Reverso Context membantu dalam memahami makna kata sesuai konteks kalimat. 
+          Contoh penggunaannya juga memudahkan pembelajar memperkaya kosakata 
+          dan mengetahui penggunaan bahasa Arab secara lebih alami. 
+          Namun tidak tersedia translate dalam 
+          bahasa Indonesia, jadi agak ribet digunakan.
+        </p>
+      </div>
+
+      <a href="https://context.reverso.net/translation/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="access-btn">
+        KUNJUNGI WEBSITE →
+      </a>
+
+    </div>
+  </article>
+
+  <!-- QAAMUS -->
+
+  <article class="resource-card">
+
+    <div class="resource-logo">
+    <img
+        src="logo qaamuuusss.png"
+        alt="Logo Qamuus"
+        class="dictionary-logo"
+    >
+    </div>
+
+    <div class="resource-info">
+
+      <span class="tag">KAMUS ARAB - INDONESIA</span>
+
+      <h3>Qaamus</h3>
+
+      <p>
+        <strong>Deskripsi:</strong>
+        Qaamus merupakan platform digital yang menyediakan kumpulan puisi Arab 
+        dari berbagai penyair dan periode. 
+        Pengguna dapat mencari penyair, judul puisi, maupun kata tertentu dalam bait-bait puisi.
+      </p>
+
+      <p>
+        <strong>Fungsi:</strong>
+        Mencari, membaca, dan mendengarkan puisi Arab 
+        serta mengenal karya dan biografi para penyair.
+      </p>
+
+      <div class="review">
+        <p>
+          <strong>Ulasan:</strong>
+          Website ini menjadi sumber belajar sastra Arab yang bermanfaat 
+          untuk mengenal perkembangan puisi Arab, 
+          memperkaya kosakata, dan memahami keindahan bahasa Arab.
+        </p>
+      </div>
+
+      <a href="https://www.qaamus.com/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="access-btn">
+        KUNJUNGI WEBSITE →
+      </a>
+
+    </div>
+  </article>
+
+</section>
+
+<!-- TIPS -->
+
+<section class="tips">
+  <h2>Tips Menggunakan Kamus Digital</h2>
+
+  <p>
+    Gunakan kamus digital untuk membantu menemukan
+    makna kosakata, tetapi jangan hanya mengandalkan
+    terjemahan. Perhatikan konteks kalimat, bentuk kata,
+    dan penggunaannya agar pemahaman Bahasa Arab
+    menjadi lebih tepat.
+  </p>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-logo">LITTAROJJI </div>
+
+  <p>
+    Arabic Digital Resource Atlas<br>
+    Proyek Tugas Kelompok 2 Literasi Digital (2026)
+  </p>
+
+  <p style="margin-top:15px;">
+    Tim Penyusun: Abdul Latif (256141028), Muhammad Zaki Imaduddin (256141032), Arif Rahmatullah (256141038), 
+    Raissa Neila Jasmine (256141045), dan Tanwirotul Muhimmah (256141049)<br>
+    Program Studi Bahasa dan Sastra Arab<br>
+    UIN Raden Mas Said Surakarta
+  </p>
+
+  <div class="copyright">
+    © 2026 Littarojji. Dibuat untuk memenuhi tugas
+    proyek Mata Kuliah Literasi Digital.
+  </div>
+
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks")
+    .classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

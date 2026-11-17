@@ -1,0 +1,1157 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="logo web fiks.png">
+
+<title>Perpustakaan Digital | Littarojji</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #173d35;
+  --green2: #24594b;
+  --gold: #c5a56a;
+  --cream: #f8f6ef;
+  --white: #ffffff;
+  --text: #24352f;
+  --muted: #77847c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+
+/* NAVBAR */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 15px rgba(0,0,0,.04);
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--green);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 23px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+}
+
+.menu-btn {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  background: var(--green);
+  color: white;
+  padding: 75px 8%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 780px;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 6vw, 58px);
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.arabic {
+    color: #dfc58f;
+    font-size: 29px;
+    direction: rtl;
+    text-align: left;
+    margin-left: 0;
+    display: block;
+}
+
+.hero p {
+  color: #d4dfd8;
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 650px;
+}
+
+.hero-decoration {
+  position: absolute;
+  right: 8%;
+  top: 20px;
+  font-size: 210px;
+  color: rgba(255,255,255,.045);
+  font-family: serif;
+}
+
+/* BREADCRUMB */
+
+.breadcrumb {
+  padding: 25px 8% 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--green2);
+}
+
+/* INTRO */
+
+.intro {
+  text-align: center;
+  padding: 60px 8% 35px;
+}
+
+.label {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.intro h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  color: var(--green);
+  margin-bottom: 15px;
+}
+
+.intro p {
+  max-width: 720px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* DIGITAL LIBRARY */
+
+.library-section {
+  padding: 35px 8% 75px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--green);
+  font-size: 29px;
+  margin-top: 7px;
+}
+
+.section-heading p {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 300px;
+  line-height: 1.8;
+}
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.library-card {
+  background: white;
+  border: 1px solid #eeeae0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.library-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(23,61,53,.09);
+}
+
+.library-cover {
+  min-height: 175px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.cover-one {
+  background: linear-gradient(135deg, #173d35, #39745d);
+}
+
+.cover-two {
+  background: linear-gradient(135deg, #a47b43, #d3b779);
+}
+
+.cover-three {
+  background: linear-gradient(135deg, #344f69, #64859b);
+}
+
+.cover-symbol {
+  font-family: serif;
+  font-size: 48px;
+  opacity: .9;
+}
+
+.cover-caption {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.library-info {
+  padding: 23px;
+}
+
+.library-tag {
+  display: inline-block;
+  background: #edf3ed;
+  color: var(--green2);
+  padding: 6px 11px;
+  font-size: 9px;
+  font-weight: 700;
+  border-radius: 30px;
+  margin-bottom: 12px;
+}
+
+.library-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+.library-info p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.9;
+  min-height: 90px;
+}
+
+.library-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 11px 17px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.library-btn:hover {
+  background: var(--gold);
+  color: var(--green);
+}
+
+/* PDF COLLECTION */
+
+.pdf-section {
+  background: #edf0e8;
+  padding: 65px 8% 75px;
+}
+
+.pdf-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.pdf-heading .label {
+  margin-bottom: 12px;
+}
+
+.pdf-heading h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--green);
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.pdf-heading p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+  max-width: 650px;
+  margin: auto;
+}
+
+.pdf-list {
+  max-width: 850px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pdf-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: white;
+  padding: 19px 22px;
+  border-radius: 10px;
+  border: 1px solid #e9e8df;
+  transition: .3s;
+}
+
+.pdf-item:hover {
+  box-shadow: 0 8px 22px rgba(23,61,53,.07);
+}
+
+.pdf-icon {
+  width: 55px;
+  height: 65px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: white;
+  background: #a9564d;
+}
+
+.pdf-item:nth-child(2) .pdf-icon {
+  background: #527b63;
+}
+
+.pdf-item:nth-child(3) .pdf-icon {
+  background: #b18b4d;
+}
+
+.pdf-item:nth-child(4) .pdf-icon {
+  background: #607b99;
+}
+
+.pdf-item:nth-child(5) .pdf-icon {
+  background: #806b8e;
+}
+
+.pdf-info {
+  flex: 1;
+}
+
+.pdf-info h3 {
+  font-size: 15px;
+  color: var(--green);
+  margin-bottom: 5px;
+}
+
+.pdf-info p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.pdf-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.pdf-btn {
+  display: inline-block;
+  padding: 10px 13px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  transition: .3s;
+}
+
+.read-btn {
+  background: var(--green);
+  color: white;
+}
+
+.download-btn {
+  background: #f0e8d8;
+  color: var(--green);
+}
+
+.pdf-btn:hover {
+  opacity: .8;
+}
+
+/* NOTE */
+
+.library-note {
+  max-width: 850px;
+  margin: 28px auto 0;
+  padding: 17px 20px;
+  background: rgba(255,255,255,.65);
+  border-left: 3px solid var(--gold);
+  border-radius: 5px;
+}
+
+.library-note p {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* TIPS */
+
+.tips {
+  padding: 55px 8%;
+  text-align: center;
+}
+
+.tips h2 {
+  font-family: 'Playfair Display', serif;
+  color: var(--green);
+  font-size: 28px;
+  margin-bottom: 13px;
+}
+
+.tips p {
+  max-width: 680px;
+  margin: auto;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* FOOTER */
+
+footer {
+  background: #102d27;
+  color: #d2ded7;
+  text-align: center;
+  padding: 38px 8%;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 12px;
+}
+
+footer p {
+  font-size: 12px;
+  line-height: 2;
+  color: #b5c5bc;
+}
+
+.copyright {
+  border-top: 1px solid #355349;
+  margin-top: 22px;
+  padding-top: 18px;
+  font-size: 11px;
+  color: #9aafa3;
+}
+
+/* Library card arrangement */
+.library-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Card size */
+.library-card {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Original logo size */
+.library-card img {
+    width: 150px;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.resource-cover {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.resource-cover img {
+    max-width: 75%;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 600px) {
+    .library-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+  .library-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media(max-width: 650px) {
+  nav {
+    padding: 17px 6%;
+  }
+
+  .menu-btn {
+    display: block;
+    color: var(--green);
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: var(--cream);
+    flex-direction: column;
+    padding: 25px 7%;
+    gap: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero {
+    padding: 65px 7%;
+  }
+
+  .hero-decoration {
+    right: 2%;
+    font-size: 130px;
+  }
+
+  .breadcrumb {
+    padding-left: 7%;
+  }
+
+  .intro {
+    padding: 50px 7% 25px;
+  }
+
+  .intro h2 {
+    font-size: 28px;
+  }
+
+  .library-section {
+    padding: 30px 6% 55px;
+  }
+
+  .library-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-section {
+    padding: 50px 6%;
+  }
+
+  .pdf-heading h2 {
+    font-size: 27px;
+  }
+
+  .pdf-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 13px;
+  }
+
+  .pdf-info {
+    min-width: 0;
+  }
+
+  .pdf-actions {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 68px;
+  }
+
+  .tips {
+    padding: 45px 7%;
+  }
+}
+
+/* GAMBAR HERO */
+.hero {
+    position: relative;
+}
+
+.hero-image {
+    position: absolute;
+    right: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+  <a href="index.html" class="logo">
+    LITTA<span>ROJJI</span>
+  </a>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="kamus.html">Kamus Digital</a></li>
+    <li><a href="tata-bahasa.html">Tata Bahasa</a></li>
+    <li><a href="perpustakaan.html" class="active">Perpustakaan</a></li>
+    <li><a href="skill-berbahasa.html">Skill Berbahasa</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+  <div class="hero-decoration">۞</div>
+
+  <div class="hero-content">
+    <div class="eyebrow">LITTAROJJI • DIGITAL RESOURCES</div>
+
+    <h1>Arabic Digital Library</h1>
+
+    <div class="arabic" dir="rtl">
+      الْمَكْتَبَةُ الْعَرَبِيَّةُ الرَّقْمِيَّةُ
+    </div>
+
+    <p>
+      Jelajahi berbagai koleksi buku, kitab, dan bahan bacaan
+      digital berbahasa Arab. Temukan sumber referensi untuk
+      memperluas wawasan serta mendukung kegiatan belajar
+      Bahasa Arab.
+    </p>
+  </div>
+    
+    </div>
+
+    <!-- GAMBAR HERO -->
+    <div class="hero-image">
+        <img src="perpustakaan.png"
+             alt="Ilustrasi perpustakaan digital Arab">
+    </div>
+
+</header>
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb">
+  <a href="index.html">Beranda</a>
+  &nbsp; / &nbsp; Perpustakaan Digital
+</div>
+
+<!-- INTRO -->
+
+<section class="intro">
+  <div class="label">DIGITAL LIBRARY COLLECTION</div>
+
+  <h2>Jelajahi Koleksi Bacaan</h2>
+
+  <p>
+    Perpustakaan digital memberikan kemudahan untuk mengakses
+    berbagai sumber bacaan melalui internet. Berikut beberapa
+    platform yang dapat dimanfaatkan untuk menemukan kitab,
+    buku, dan referensi berbahasa Arab.
+  </p>
+</section>
+
+<!-- DIGITAL LIBRARY CARDS -->
+
+<section class="library-section">
+
+  <div class="section-heading">
+    <div>
+      <div class="label">ONLINE LIBRARY</div>
+      <h2>Perpustakaan Digital</h2>
+    </div>
+
+    <p>
+      Tiga platform pilihan untuk menemukan koleksi
+      buku dan referensi berbahasa Arab.
+    </p>
+  </div>
+
+  <div class="library-grid">
+
+    <!-- SHAMILA -->
+
+    <article class="library-card">
+
+      <div class="library-cover cover-one">
+        <div class="resource-cover">
+    <img src="logo al maktabah assyamilah.jpg"
+         alt="Logo Maktabah Syamilah">
+      </div>
+        <div class="cover-caption">ISLAMIC DIGITAL LIBRARY</div>
+      </div>
+
+      <div class="library-info">
+        <span class="library-tag">KOLEKSI KITAB ISLAM</span>
+
+        <h3>Al-Maktabah Al-Syamilah</h3>
+
+        <p>
+          Platform perpustakaan digital yang menyediakan
+          beragam kitab keislaman dalam berbagai bidang ilmu,
+          seperti tafsir, hadis, fikih, akidah, dan bahasa Arab.
+        </p>
+
+        <a href="https://shamela.ws/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="library-btn">
+          KUNJUNGI PERPUSTAKAAN →
+        </a>
+      </div>
+
+    </article>
+
+    <!-- NOOR BOOK -->
+
+    <article class="library-card">
+
+      <div class="library-cover cover-two">
+        <div class="resource-cover">
+    <img src="logo noor library.png"
+         alt="Logo Noor Library">
+       </div>
+        <div class="cover-caption">ARABIC BOOK COLLECTION</div>
+      </div>
+
+      <div class="library-info">
+        <span class="library-tag">BUKU DIGITAL</span>
+
+        <h3>Noor Book</h3>
+
+        <p>
+          Platform buku digital yang menyediakan berbagai
+          koleksi buku dalam Bahasa Arab dan bahasa lainnya,
+          dengan beragam tema, mulai dari sastra hingga
+          pengetahuan umum.
+        </p>
+
+        <a href="https://www.noor-book.com/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="library-btn">
+          KUNJUNGI PERPUSTAKAAN →
+        </a>
+      </div>
+
+    </article>
+
+    <!-- AL WAQFEYA -->
+
+    <article class="library-card">
+
+      <div class="library-cover cover-three">
+      <div class="resource-cover">
+    <img src="logo maktabah wa.png"
+         alt="Logo Al-Waqfeya">
+      </div>
+        <div class="cover-caption">ARABIC BOOK ARCHIVE</div>
+      </div>
+
+      <div class="library-info">
+        <span class="library-tag">ARSIP BUKU ARAB</span>
+
+        <h3>Al-Waqfeya</h3>
+
+        <p>
+          Perpustakaan digital yang menyediakan koleksi
+          kitab dan buku berbahasa Arab dalam berbagai
+          bidang keilmuan untuk membantu kegiatan membaca
+          dan penelusuran referensi.
+        </p>
+
+        <a href="https://waqfeya.net/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="library-btn">
+          KUNJUNGI PERPUSTAKAAN →
+        </a>
+      </div>
+
+    </article>
+
+  </div>
+</section>
+
+<!-- PDF COLLECTION -->
+
+<section class="pdf-section">
+
+  <div class="pdf-heading">
+    <div class="label">PERSONAL STUDY COLLECTION</div>
+
+    <h2>Koleksi Materi PDF</h2>
+
+    <p>
+      Kumpulan bahan bacaan digital untuk mendukung
+      pembelajaran Bahasa Arab, mulai dari nahwu, sharaf,
+      hingga materi bahasa Arab tingkat dasar.
+    </p>
+  </div>
+
+  <div class="pdf-list">
+
+    <!-- JURUMIYYAH -->
+
+    <article class="pdf-item">
+      <div class="pdf-icon">PDF</div>
+
+      <div class="pdf-info">
+        <h3>Al-Jurumiyyah (الجرومية)</h3>
+        <p>Materi dasar ilmu nahwu dan kaidah tata bahasa Arab.</p>
+      </div>
+
+      <div class="pdf-actions">
+        <a href="https://drive.google.com/file/d/18AH34BIzXYZ44JHJwCLvBJnN9d_9EffJ/view?usp=drive_link"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="pdf-btn read-btn">
+          BACA PDF
+        </a>
+
+        <a href="https://drive.google.com/uc?export=download&id=18AH34BIzXYZ44JHJwCLvBJnN9d_9EffJ"
+           download
+           class="pdf-btn download-btn">
+          UNDUH
+        </a>
+      </div>
+    </article>
+
+    <!-- AMTSILAH -->
+
+    <article class="pdf-item">
+      <div class="pdf-icon">PDF</div>
+
+      <div class="pdf-info">
+        <h3>Amtsilah At-Tasrifiyyah (الأمثلة التصريفية)</h3>
+        <p>Materi ilmu sharaf untuk mempelajari perubahan bentuk kata.</p>
+      </div>
+
+      <div class="pdf-actions">
+        <a href="https://drive.google.com/file/d/1alRaadiLxTm1STzCSQGGdT_QuvaFDl7O/view?usp=drive_link"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="pdf-btn read-btn">
+          BACA PDF
+        </a>
+
+        <a href="https://drive.google.com/uc?export=download&id=1alRaadiLxTm1STzCSQGGdT_QuvaFDl7O"
+           download
+           class="pdf-btn download-btn">
+          UNDUH
+        </a>
+      </div>
+    </article>
+
+    <!-- BAINA YADAIK -->
+
+    <article class="pdf-item">
+      <div class="pdf-icon">PDF</div>
+
+      <div class="pdf-info">
+        <h3>Al-Arabiyyah Baina Yadaik (العربية بين يديك)</h3>
+        <p>Bahan pembelajaran Bahasa Arab untuk mengembangkan kemampuan berbahasa.</p>
+      </div>
+
+      <div class="pdf-actions">
+        <a href="https://drive.google.com/file/d/1r6iN5peis7mdx3UXCf52BG5C0pF3548g/view?usp=drive_link"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="pdf-btn read-btn">
+          BACA PDF
+        </a>
+
+        <a href="https://drive.google.com/uc?export=download&id=1r6iN5peis7mdx3UXCf52BG5C0pF3548g"
+           download
+           class="pdf-btn download-btn">
+          UNDUH
+        </a>
+      </div>
+    </article>
+
+    <!-- LINNASYIIN -->
+
+    <article class="pdf-item">
+      <div class="pdf-icon">PDF</div>
+
+      <div class="pdf-info">
+        <h3>Al-Arabiyyah Linnasyi'in (العربية للناشئين)</h3>
+        <p>Buku pembelajaran Bahasa Arab yang disusun secara bertahap.</p>
+      </div>
+
+      <div class="pdf-actions">
+        <a href="https://nastain707.blogspot.com/2017/04/e-book-kitab-al-arabiyah-linnasyiin.html"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="pdf-btn read-btn">
+          BACA PDF
+        </a>
+
+        <a href="https://nastain707.blogspot.com/2017/04/e-book-kitab-al-arabiyah-linnasyiin.html"
+           download
+           class="pdf-btn download-btn">
+          UNDUH
+        </a>
+      </div>
+    </article>
+
+    <!-- BEGINNER -->
+
+    <article class="pdf-item">
+      <div class="pdf-icon">PDF</div>
+
+      <div class="pdf-info">
+        <h3>Percakapan Sehari-hari dalam Bahasa Arab</h3>
+        <p>Kumpulan materi dasar untuk mengenal kosakata dan ungkapan Bahasa Arab.</p>
+      </div>
+
+      <div class="pdf-actions">
+        <a href="https://drive.google.com/file/d/10yqt-vsttH05AMZImIZ4cUBQV8wMia2O/view?usp=drive_link"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="pdf-btn read-btn">
+          BACA PDF
+        </a>
+
+        <a href="https://drive.google.com/uc?export=download&id=10yqt-vsttH05AMZImIZ4cUBQV8wMia2O"
+           download
+           class="pdf-btn download-btn">
+          UNDUH
+        </a>
+      </div>
+    </article>
+
+    <!-- QAWAID I'lal -->
+
+    <article class="pdf-item">
+      <div class="pdf-icon">PDF</div>
+
+      <div class="pdf-info">
+        <h3>Qawaid I'lal (قواعد الْإِعْلَالِ)</h3>
+        <p>Buku pembelajaran Bahasa Arab yang disusun secara bertahap.</p>
+      </div>
+
+      <div class="pdf-actions">
+        <a href="https://drive.google.com/file/d/1OP-UAX6I9DCIfc448IJNVf4W6w20l-sy/view?usp=drive_link"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="pdf-btn read-btn">
+          BACA PDF
+        </a>
+
+        <a href="https://drive.google.com/uc?export=download&id=1OP-UAX6I9DCIfc448IJNVf4W6w20l-sy"
+           download
+           class="pdf-btn download-btn">
+          UNDUH
+        </a>
+      </div>
+    </article>
+    <!-- Al-Miftah jilid 1 -->
+
+    <article class="pdf-item">
+      <div class="pdf-icon">PDF</div>
+
+      <div class="pdf-info">
+        <h3>Al-Miftah Jilid 1</h3>
+        <p>Buku praktis panduan nahwu yang membahas dasar-dasar ilmu nahwu seperti pembagian kalimat (isim, fi'il, huruf) serta kaidah mu'rob, mabni, dan tanda-tanda i'rob.</p>
+      </div>
+
+      <div class="pdf-actions">
+        <a href="https://drive.google.com/file/d/1VX6Br1QG-hQlCJxBMh_D2Lipl9QE6lT_/view?usp=drive_link"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="pdf-btn read-btn">
+          BACA PDF
+        </a>
+
+        <a href="https://drive.google.com/uc?export=download&id=1VX6Br1QG-hQlCJxBMh_D2Lipl9QE6lT_"
+           download
+           class="pdf-btn download-btn">
+          UNDUH
+        </a>
+      </div>
+    </article>
+<!-- Al-Miftah jilid 2 -->
+
+    <article class="pdf-item">
+      <div class="pdf-icon">PDF</div>
+
+      <div class="pdf-info">
+        <h3>Al-Miftah Jilid 2</h3>
+        <p>Buku praktis panduan nahwu yang berfokus pada pembahasan lanjutan seperti isim makrifat dan nakiroh, mudzakkar dan muannats, isim jamid dan musytaq, hingga isim adad.</p>
+      </div>
+
+      <div class="pdf-actions">
+        <a href="https://drive.google.com/file/d/1v5_ZCEyUpI3bMM2yqR28WXXrQvetunl0/view?usp=drive_link"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="pdf-btn read-btn">
+          BACA PDF
+        </a>
+
+        <a href="https://drive.google.com/uc?export=download&id=1v5_ZCEyUpI3bMM2yqR28WXXrQvetunl0"
+           download
+           class="pdf-btn download-btn">
+          UNDUH
+        </a>
+      </div>
+    </article>
+  </div>
+
+
+</section>
+
+<!-- TIPS -->
+
+<section class="tips">
+  <h2>Tips Memanfaatkan Perpustakaan Digital</h2>
+
+  <p>
+    Pilih bahan bacaan sesuai kebutuhan dan tingkat
+    kemampuan. Biasakan membaca secara bertahap, mencatat
+    kosakata baru, serta menggunakan referensi yang
+    jelas untuk menunjang kegiatan belajar dan penulisan
+    akademik.
+  </p>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-logo">LITTAROJJI</div>
+
+  <p>
+    Arabic Digital Resource Atlas<br>
+    Proyek Tugas Kelompok 2 Literasi Digital (2026)
+  </p>
+
+  <p style="margin-top:15px;">
+    Tim Penyusun: Abdul Latif (256141028), Muhammad Zaki Imaduddin (256141032), Arif Rahmatullah (256141038), 
+    Raissa Neila Jasmine (256141045), dan Tanwirotul Muhimmah (256141049)<br>
+    Program Studi Bahasa dan Sastra Arab<br>
+    UIN Raden Mas Said Surakarta
+  </p>
+
+  <div class="copyright">
+    © 2026 Littarojji. Dibuat untuk memenuhi tugas
+    proyek Mata Kuliah Literasi Digital.
+  </div>
+
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks")
+    .classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,780 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Language Skills | Littaroji</title>
+<link rel="icon" type="image/png" href="logo web fiks.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --green: #123d35;
+    --green2: #1d5147;
+    --gold: #dfc58f;
+    --cream: #f8f7f2;
+    --muted: #777b76;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--cream);
+    color: #263c36;
+}
+
+/* NAVBAR */
+nav {
+    background: #fff;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--green);
+}
+
+.logo span {
+    color: #b99b68;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #444;
+    font-size: 12px;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: #b99b68;
+}
+
+/* HERO */
+.hero {
+    background: var(--green);
+    color: white;
+    padding: 75px 8%;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 58px);
+    margin-bottom: 12px;
+}
+
+.hero-arabic {
+    color: var(--gold);
+    font-size: 27px;
+    margin-bottom: 25px;
+    direction: rtl;
+    text-align: left;
+}
+
+.hero p {
+    color: #d4dfd8;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 700px;
+}
+
+/* SKILLS */
+.skills-section {
+    padding: 65px 8% 35px;
+}
+
+.section-label {
+    color: #a58c5c;
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 17px;
+}
+
+.skill-card {
+    background: white;
+    padding: 27px 15px;
+    text-align: center;
+    border: 1px solid #e9e5dc;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.skill-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.skill-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.skill-card .arabic {
+    color: #a88d5e;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.skill-card p {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* RESOURCE */
+.resource-section {
+    padding: 55px 8% 80px;
+    background: #f0eee7;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 23px;
+}
+
+.resource-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #e8e4dc;
+    display: flex;
+    flex-direction: column;
+    transition: .3s;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.07);
+}
+
+.resource-cover {
+    min-height: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+    background: var(--green);
+}
+
+.resource-card:nth-child(2) .resource-cover {
+    background: #b18c55;
+}
+
+.resource-card:nth-child(3) .resource-cover {
+    background: #34566b;
+}
+
+.resource-card:nth-child(4) .resource-cover {
+    background: #53766b;
+}
+
+.resource-card:nth-child(5) .resource-cover {
+    background: #82735e;
+}
+
+.cover-text {
+    text-align: center;
+}
+
+.cover-text .arabic {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.cover-text small {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.resource-content {
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.category {
+    font-size: 9px;
+    color: #9a8052;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.resource-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.resource-content p {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.9;
+    margin-bottom: 13px;
+}
+
+.review {
+    background: #f6f4ee;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 10px;
+    line-height: 1.8;
+    color: #59635c;
+    margin-top: auto;
+    margin-bottom: 17px;
+}
+
+.review strong {
+    color: var(--green);
+}
+
+.visit-btn {
+    display: inline-block;
+    text-align: center;
+    background: var(--green);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.visit-btn:hover {
+    background: #b18c55;
+}
+
+/* FOOTER */
+footer {
+    background: #10372f;
+    color: #d7dfd8;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+footer h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+footer p {
+    font-size: 10px;
+    line-height: 2;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 13px;
+    }
+
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 55px 7%;
+    }
+    
+}
+
+.resource-logo {
+    width: 120px;
+    height: 90px;
+    object-fit: contain;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+/* GAMBAR HERO */
+.hero {
+    position: relative;
+}
+
+.hero-image {
+    position: absolute;
+    right: 7%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">LITTA<span>ROJJI</span></div>
+
+    <div class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="kamus.html">Kamus Digital</a>
+        <a href="tata-bahasa.html">Tata Bahasa</a>
+        <a href="perpustakaan.html">Perpustakaan</a>
+        <a href="skill-bahasa.html" class="active">Skill Berbahasa</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="eyebrow">LITTAROJJI • LANGUAGE LEARNING</div>
+
+    <h1>Language Skills</h1>
+
+    <div class="hero-arabic">
+        مَهَارَاتُ اللُّغَةِ
+    </div>
+
+    <p>
+        Tingkatkan kemampuan berbahasa Arab melalui berbagai
+        sumber pembelajaran digital. Temukan materi audio,
+        podcast, video, dan latihan untuk mengembangkan empat
+        keterampilan dasar Bahasa Arab.
+    </p>
+
+    <!--GAMBAR TAMBAHAN-->
+    <div class="hero-image">
+        <img src="belajar bahasa Arab.jpg" alt="Ilustrasi Belajar Bahasa Arab"
+
+    </div>
+
+</section>
+
+<!-- FOUR SKILLS -->
+<section class="skills-section">
+
+    <div class="section-label">FOUR LANGUAGE SKILLS</div>
+
+    <h2 class="section-title">Empat Keterampilan Bahasa</h2>
+
+    <p class="section-desc">
+        Pembelajaran Bahasa Arab tidak hanya berfokus pada
+        penguasaan kosakata dan tata bahasa, tetapi juga
+        kemampuan memahami dan menggunakan bahasa.
+    </p>
+
+    <div class="skill-grid">
+
+        <div class="skill-card">
+            <div class="skill-icon">🎧</div>
+            <h3>Menyimak</h3>
+            <div class="arabic">الاستماع</div>
+            <p>Mendengarkan percakapan bahasa Arab. Memahami percakapan dan informasi lisan.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🗣️</div>
+            <h3>Berbicara</h3>
+            <div class="arabic">الكلام</div>
+            <p>Melatih percakapan dan pengucapan Bahasa Arab.</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">📖</div>
+            <h3>Membaca</h3>
+            <div class="arabic">القراءة</div>
+            <p>Memahami teks dan bacaan berbahasa Arab dan melatih kemampuan Nahwu & Shorof .</p>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">✍️</div>
+            <h3>Menulis</h3>
+            <div class="arabic">الكتابة</div>
+            <p>Melatih kemampuan menyusun kalimat dan teks bahasa Arab dengan baik dan benar.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- LEARNING RESOURCES -->
+<section class="resource-section">
+
+    <div class="section-label">DIGITAL LEARNING RESOURCES</div>
+
+    <h2 class="section-title">Jelajahi Sumber Belajar</h2>
+
+    <p class="section-desc">
+        Berikut beberapa platform dan kanal pembelajaran
+        yang dapat membantu mengembangkan keterampilan
+        Bahasa Arab secara mandiri.
+    </p>
+
+    <div class="resource-grid">
+
+        <!-- AL JAZEERA -->
+        <div class="resource-card">
+            <div class="resource-cover">
+                <img src="logo al jazeera learning.png"
+                     alt="Logo Al Jazeera"
+                     class="resource-logo"
+                </div>
+            </div>
+
+            <div class="resource-content">
+                <div class="category">LISTENING & READING</div>
+                <h3>Al Jazeera Learning</h3>
+
+                <p>
+                    Platform pembelajaran Bahasa Arab melalui
+                    artikel, materi audio, dan latihan
+                    pemahaman dengan berbagai tingkatan.
+                </p>
+
+                <div class="review">
+                    <strong>Fungsi & Ulasan:</strong><br>
+                    Membantu melatih kemampuan menyimak dan
+                    membaca melalui materi autentik.
+                    Cocok untuk memperluas kosakata dan
+                    memahami penggunaan bahasa dalam konteks.
+                </div>
+
+                <a class="visit-btn"
+                   href="https://learning.aljazeera.net"
+                   target="_blank">
+                    KUNJUNGI WEBSITE →
+                </a>
+            </div>
+        </div>
+
+        <!-- DUOLINGO -->
+        <div class="resource-card">
+            <div class="resource-cover">
+                <img src="logo duolingo.png"
+                     alt="Logo Duolingo"
+                     class="resource-logo"
+                </div>
+            </div>
+
+            <div class="resource-content">
+                <div class="category">LISTENING & READING</div>
+                <h3>Duolingo</h3>
+
+                <p>
+                    Aplikasi pembelajaran bahasa asing yang 
+                    menyediakan materi interaktif, 
+                    termasuk pembelajaran bahasa Arab.
+                </p>
+
+                <div class="review">
+                    <strong>Fungsi & Ulasan:</strong><br>
+                    Mempelajari kosakata, tata bahasa, dan 
+                    pelafalan bahasa Arab melalui latihan interaktif.
+                    Memiliki tampilan menarik dan metode belajar 
+                    seperti permainan sehingga cocok untuk pemula.
+                </div>
+
+                <a class="visit-btn"
+                   href="https://www.duolingo.com/"
+                   target="_blank">
+                    KUNJUNGI WEBSITE →
+                </a>
+            </div>
+        </div>
+
+        <!-- SOWT -->
+        <div class="resource-card">
+            <div class="resource-cover">
+                <img src="logo sowt.png"
+                     alt="Logo Sowt"
+                     class="resource-logo"
+                </div>
+            </div>
+
+            <div class="resource-content">
+                <div class="category">LISTENING PRACTICE</div>
+                <h3>Sowt</h3>
+
+                <p>
+                    Platform podcast berbahasa Arab yang
+                    menghadirkan berbagai pembahasan mengenai
+                    kehidupan, budaya, sosial, dan sejarah.
+                </p>
+
+                <div class="review">
+                    <strong>Fungsi & Ulasan:</strong><br>
+                    Menjadi sarana latihan istima' melalui
+                    percakapan dan narasi penutur asli.
+                    Cocok untuk membiasakan telinga dengan
+                    bahasa Arab dalam konteks nyata.
+                </div>
+
+                <a class="visit-btn"
+                   href="https://sowt.com"
+                   target="_blank">
+                    DENGARKAN PODCAST →
+                </a>
+            </div>
+        </div>
+
+        <!-- ARABICPOD101 -->
+        <div class="resource-card">
+            <div class="resource-cover">
+                <img src="logo arabicpod101.png"
+                     alt="Logo Arabicpod101"
+                     class="resource-logo"
+                </div>
+            </div>
+
+            <div class="resource-content">
+                <div class="category">VIDEO LEARNING</div>
+                <h3>ArabicPod101</h3>
+
+                <p>
+                    Kanal pembelajaran Bahasa Arab melalui
+                    video, dialog, kosakata, ungkapan sehari-hari,
+                    dan materi percakapan.
+                </p>
+
+                <div class="review">
+                    <strong>Fungsi & Ulasan:</strong><br>
+                    Membantu pembelajar mengenal ungkapan
+                    dan percakapan Bahasa Arab. Materinya
+                    bervariasi sehingga dapat digunakan
+                    untuk belajar secara bertahap.
+                </div>
+
+                <a class="visit-btn"
+                   href="https://www.youtube.com/@ArabicPod101"
+                   target="_blank">
+                    KUNJUNGI CHANNEL →
+                </a>
+            </div>
+        </div>
+
+        <!-- MAHA -->
+        <div class="resource-card">
+            <div class="resource-cover">
+                <img src="logo maha.png"
+                     alt="Logo Channel Maha"
+                     class="resource-logo"
+                </div>
+            </div>
+
+            <div class="resource-content">
+                <div class="category">SPEAKING & VOCABULARY</div>
+                <h3>Learn Arabic with Maha</h3>
+
+                <p>
+                    Kanal pembelajaran Bahasa Arab yang
+                    menyajikan video tentang kosakata,
+                    ungkapan, dan percakapan.
+                </p>
+
+                <div class="review">
+                    <strong>Fungsi & Ulasan:</strong><br>
+                    Dapat dimanfaatkan untuk mempelajari
+                    pengucapan, ungkapan sehari-hari,
+                    dan meningkatkan kepercayaan diri
+                    dalam berbicara Bahasa Arab.
+                </div>
+
+                <a class="visit-btn"
+                   href="https://www.youtube.com/results?search_query=Learn+Arabic+with+Maha"
+                   target="_blank">
+                    CARI CHANNEL →
+                </a>
+            </div>
+        </div>
+
+        <!-- PASCA IQRO -->
+        <div class="resource-card">
+            <div class="resource-cover">
+                <img src="logo pasca iqro'.png"
+                     alt="Logo Channel Pasca Iqro'"
+                     class="resource-logo"
+                </div>
+            </div>
+
+            <div class="resource-content">
+                <div class="category">ARABIC LEARNING</div>
+                <h3>Pasca Iqro</h3>
+
+                <p>
+                    Kanal pembelajaran yang dapat dimanfaatkan
+                    untuk menemukan materi pendukung
+                    pembelajaran Bahasa Arab.
+                </p>
+
+                <div class="review">
+                    <strong>Fungsi & Ulasan:</strong><br>
+                    Menjadi sumber tambahan untuk belajar
+                    secara mandiri melalui video pembelajaran.
+                    Dapat melengkapi materi yang diperoleh
+                    dari sumber lainnya.
+                </div>
+
+                <a class="visit-btn"
+                   href="https://www.youtube.com/results?search_query=Pasca+Iqro+Bahasa+Arab"
+                   target="_blank">
+                    CARI CHANNEL →
+                </a>
+            </div>
+        </div>
+
+        <!-- TYPING POINT -->
+        <div class="resource-card">
+            <div class="resource-cover">
+                <img src="logo typing.png"
+                     alt="Logo Ty[ing Club"
+                     class="resource-logo"
+                </div>
+            </div>
+
+            <div class="resource-content">
+               <div class="category">WRITING & TYPING SKILLS</div>
+               <h3>Typing Point</h3>
+
+               <p>
+                   Website latihan mengetik Bahasa Arab yang menyediakan
+                   pelajaran dasar, latihan paragraf, tes kecepatan
+                   mengetik, serta fitur konversi teks Inggris ke Arab.
+               </p>
+
+               <div class="review">
+                    <strong>Fungsi & Ulasan:</strong><br>
+                    Membantu pengguna mengenali letak huruf Arab
+                    pada keyboard serta melatih kecepatan dan
+                    ketepatan mengetik. Dilengkapi latihan bertahap
+                    dan pengukuran hasil berupa WPM, CPM, akurasi,
+                    serta jumlah kesalahan. Cocok untuk melatih
+                    keterampilan mengetik Arab secara mandiri.
+               </div>
+
+               <a class="visit-btn"
+                  href="https://www.typingpoint.com/arabic/arabic-typing"
+                  target="_blank">
+                  MULAI LATIHAN →
+             </a>
+         </div>
+     </div>
+
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-logo">LITTAROJJI</div>
+
+  <p>
+    Arabic Digital Resource Atlas<br>
+    Proyek Tugas Kelompok 2 Literasi Digital (2026)
+  </p>
+
+  <p style="margin-top:15px;">
+    Tim Penyusun: Abdul Latif (256141028), Muhammad Zaki Imaduddin (256141032), Arif Rahmatullah (256141038), 
+    Raissa Neila Jasmine (256141045), dan Tanwirotul Muhimmah (256141049)<br>
+    Program Studi Bahasa dan Sastra Arab<br>
+    UIN Raden Mas Said Surakarta
+  </p>
+
+  <div class="copyright">
+    © 2026 Littarojji. Dibuat untuk memenuhi tugas
+    proyek Mata Kuliah Literasi Digital.
+  </div>
+
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks")
+    .classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
+
