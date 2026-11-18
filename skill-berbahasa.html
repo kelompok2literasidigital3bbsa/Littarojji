@@ -326,6 +326,14 @@ footer p {
   line-height: 2;
   color: #b5c5bc;
 }
+/* Membuat garis pemisah di atas teks copyright */
+footer .copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Garis tipis transparan */
+  margin-top: 20px;   /* Jarak antara teks UIN dan garis */
+  padding-top: 15px;  /* Jarak antara garis dan teks copyright */
+  font-size: 13px;    /* Mengecilkan ukuran teks */
+  opacity: 0.8;       /* Membuat warnanya sedikit lebih soft */
+}
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
@@ -770,10 +778,14 @@ footer p {
     UIN Raden Mas Said Surakarta
   </p>
 
+  <!--add class 'copyright' here-->
+  <p>
   <div class="copyright">
     © 2026 Littarojji. Dibuat untuk memenuhi tugas
     proyek Mata Kuliah Literasi Digital.
+    <p>
   </div>
+  </p><footer>
 
 </footer>
 
